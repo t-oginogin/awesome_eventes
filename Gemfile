@@ -43,3 +43,5 @@ gem 'omniauth-twitter', '~> 1.0.1'
 
 gem 'kaminari', '~> 0.15.1'
 gem 'kaminari-bootstrap', '~> 3.0.1'
+
+gem 'ransack', '~> 1.2.2'
