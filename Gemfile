@@ -49,3 +49,7 @@ gem 'ransack', '~> 1.2.2'
 gem 'carrierwave', '~> 0.10.0'
 
 gem 'mini_magick', '~> 3.7.0'
+
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0.0'
+end
