@@ -15,9 +15,28 @@
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 
+ENV["RAILS_ENV"] ||= 'test'
+require File.expand_path("../../config/environment", __FILE__)
+require 'rspec/rails'
+
+require 'capybara/rails'
+require 'capybara/rspec'
+
 require 'factory_girl_rails'
 
 RSpec.configure do |config|
+
+  config.before(:all, type: :feature) do
+    OmniAuth.config.test_mode = true
+    OmniAuth.config.mock_auth[:twitter] = OmniAuth::AuthHash.new({
+      provider: 'twitter',
+      uid: '12345',
+      info: {
+        nickname: 'netwillnet',
+        image: 'http://example.com/netwillnet.jpg'
+      }
+    })
+  end
 
   config.include FactoryGirl::Syntax::Methods
 
