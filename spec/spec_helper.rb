@@ -15,13 +15,6 @@
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 
-ENV["RAILS_ENV"] ||= 'test'
-require File.expand_path("../../config/environment", __FILE__)
-require 'rspec/rails'
-
-require 'capybara/rails'
-require 'capybara/rspec'
-
 require 'factory_girl_rails'
 
 RSpec.configure do |config|
