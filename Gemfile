@@ -61,3 +61,10 @@ group :test do
   gem 'poltergeist', '~> 1.5.0'
   gem 'database_cleaner', '~> 1.2.0'
 end
+
+group :development, :test do
+  gem 'capistrano', :require => false
+  gem 'capistrano-rails', :require => false
+  gem 'capistrano-rbenv', :require => false
+  gem 'capistrano-bundler', :require => false
+end
