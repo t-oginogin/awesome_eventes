@@ -6,9 +6,9 @@ set :stage, :staging
 # is considered to be the first unless any hosts have the primary
 # property set.  Don't declare `role :all`, it's a meta role.
 
-role :app, %w{ubuntu@153.149.33.212}
-role :web, %w{ubuntu@153.149.33.212}
-role :db,  %w{ubuntu@153.149.33.212}
+role :app, %W{#{ENV['AWESOME_USER']}@#{ENV['AWESOME_ADDRESS']}}
+role :web, %W{#{ENV['AWESOME_USER']}@#{ENV['AWESOME_ADDRESS']}}
+role :db,  %W{#{ENV['AWESOME_USER']}@#{ENV['AWESOME_ADDRESS']}}
 
 
 # Extended Server Syntax
@@ -17,7 +17,7 @@ role :db,  %w{ubuntu@153.149.33.212}
 # server list. The second argument is a, or duck-types, Hash and is
 # used to set extended properties on the server.
 
-server '153.149.33.212', user: 'ubuntu', roles: %w{web app db}
+server "#{ENV['AWESOME_ADDRESS']}", user: "#{ENV['AWESOME_USER']}", roles: %w{web app db}
 
 
 # Custom SSH Options
